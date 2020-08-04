@@ -1,18 +1,32 @@
 import React, { Component } from 'react'
-import { Link }             from 'gatsby'
+import { graphql, Link }    from 'gatsby'
 import Layout               from '../components/Layout'
+import StyledHero           from '../components/StyledHero'
+import ContactForm          from '../components/Contact/Contact'
 
 class Contact
   extends Component {
   render() {
     return (
       <Layout>
-        Hello from contact
-        <Link to="/">Main</Link>
-
+        <StyledHero img={this.props.data.file.childImageSharp.fluid} />
+        <ContactForm/>
       </Layout>
     )
   }
 }
+
+export const getImage = graphql`
+    {
+        file(relativePath:{eq:"connectBcg.jpeg"}) {
+            childImageSharp {
+                fluid (maxWidth: 4160, quality: 90){
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+            }
+        }
+    }
+`
+
 
 export default Contact

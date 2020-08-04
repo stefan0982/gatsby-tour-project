@@ -1,11 +1,24 @@
 import React from 'react'
 import Title from '../Title.styled'
 
-import img from '../../images/defaultBcg.jpeg'
+import Img                from 'gatsby-image'
+import styles                      from '../../css/about.module.css'
+import { graphql, useStaticQuery } from 'gatsby'
 
-import styles from '../../css/about.module.css'
+const getImage = graphql`
+    {
+        aboutImage:file(relativePath:{eq:"defaultBcg.jpeg"}) {
+            childImageSharp {
+                fluid(maxWidth:600){
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+    }
+`
 
 const About = () => {
+  const { aboutImage } = useStaticQuery(getImage)
   return (
     <section className={ styles.about }>
       <Title
@@ -15,10 +28,7 @@ const About = () => {
       <div className={ styles.aboutCenter }>
         <article className={ styles.aboutImg }>
           <div className={ styles.imgContainer }>
-            <img
-              src={ img }
-              alt="img"
-            />
+            <Img fluid={aboutImage.childImageSharp.fluid}  alt="awesome photo"/>
           </div>
         </article>
         <article className={ styles.aboutInfo }>
