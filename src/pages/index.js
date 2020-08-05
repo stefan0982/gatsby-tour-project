@@ -1,17 +1,19 @@
-import React       from 'react'
-import Layout      from '../components/Layout'
-import Banner      from '../components/Banner'
-import { graphql } from 'gatsby'
-import About       from '../components/Home/About'
-import Services    from '../components/Home/Services'
-import StyledHero  from '../components/StyledHero'
-import AniLink     from 'gatsby-plugin-transition-link/AniLink'
+import React         from 'react'
+import Layout        from '../components/Layout'
+import Banner        from '../components/Banner'
+import { graphql }   from 'gatsby'
+import About         from '../components/Home/About'
+import Services      from '../components/Home/Services'
+import StyledHero    from '../components/StyledHero'
+import AniLink       from 'gatsby-plugin-transition-link/AniLink'
+import FeaturedTours from '../components/Home/FeaturedTours'
+import SEO           from '../components/SEO'
 
 export default function Home({ data }) {
-  console.log( data )
 
   return (
     <Layout>
+      <SEO title="home" description="this is description" />
       <StyledHero
         home
         img={ data.file.childImageSharp.fluid }
@@ -29,6 +31,7 @@ export default function Home({ data }) {
       </StyledHero>
       <About />
       <Services />
+      <FeaturedTours/>
     </Layout>
   )
 }

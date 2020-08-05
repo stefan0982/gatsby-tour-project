@@ -74,18 +74,16 @@ a {
   background: transparent;
   color: var(--primaryColor);
 }
-/* .gatsby-image-wrapper {
+ .gatsby-image-wrapper {
   max-height: 600px;
   box-shadow: var(--lightShadow);
-} */
+}
 main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/*.rich {*/
+/*  background: var(--primaryColor);*/
+/*}*/

@@ -11,9 +11,13 @@ module.exports = {
     title      : 'Tour project portfolio',
     description: 'a portfolio gatsby project',
     author     : 'Stefan',
+    twitterUsername: "@john_smilga",
+    image: '/defaultBcg.jpeg',
+    siteUrl: 'https://wonderful-davinci-8920b7.netlify.app'
   }, /* Your site config here */
   plugins     : [
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,6 +28,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

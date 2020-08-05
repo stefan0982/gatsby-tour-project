@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import Layout               from '../components/Layout'
 import { graphql }          from 'gatsby'
 import StyledHero           from '../components/StyledHero'
+import Tours                from '../components/Tours/Tours'
 
-class Tours
+class ToursPage
   extends Component {
   render() {
     return (
       <Layout>
         <StyledHero img={this.props.data.file.childImageSharp.fluid}/>
+        <Tours/>
       </Layout>
     )
   }
@@ -27,4 +29,4 @@ export const getImage = graphql`
 `
 
 
-export default Tours
+export default ToursPage
